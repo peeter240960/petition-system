@@ -12,11 +12,11 @@ import TecherSetting from './pages/Techer/TecherSetting';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"/petition-system"}>
       <div className="bg-gray-100 min-h-screen overflow-x-hidden py-2">
         <div className="container mx-auto">
           <header className="flex justify-center bg-yellow-300">
-            <img src="/Logo-sskru.jpg" alt="" width="70%" />
+            <img src="/petition-system/Logo-sskru.jpg" alt="" width="70%" />
           </header>
           <Switch>
             <GuestRoute path="/" exact>

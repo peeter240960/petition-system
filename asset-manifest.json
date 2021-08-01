@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/petition-system/static/css/main.07d850bd.chunk.css",
-    "main.js": "/petition-system/static/js/main.8fea27ce.chunk.js",
-    "main.js.map": "/petition-system/static/js/main.8fea27ce.chunk.js.map",
+    "main.js": "/petition-system/static/js/main.b044da4e.chunk.js",
+    "main.js.map": "/petition-system/static/js/main.b044da4e.chunk.js.map",
     "runtime-main.js": "/petition-system/static/js/runtime-main.a96163f8.js",
     "runtime-main.js.map": "/petition-system/static/js/runtime-main.a96163f8.js.map",
     "static/js/2.adea7887.chunk.js": "/petition-system/static/js/2.adea7887.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a96163f8.js",
     "static/js/2.adea7887.chunk.js",
     "static/css/main.07d850bd.chunk.css",
-    "static/js/main.8fea27ce.chunk.js"
+    "static/js/main.b044da4e.chunk.js"
   ]
 }

@@ -45,7 +45,7 @@ function Authenticatr() {
             admin: "null"
         }
         dispatch(setAuth(data))
-        history.push('/admin')
+        history.push('/admin/manage-request')
     }
     return (
         <div>

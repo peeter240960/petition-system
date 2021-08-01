@@ -30,7 +30,7 @@ function Navigation() {
                 {admin && (
                     <>
                         <Link className={`mr-3 ${location.pathname === '/admin/manage-request' ? 'font-bold' : ''}`} to="/admin/manage-request">จัดการคำร้อง</Link>
-                        <Link className={`mr-3 ${location.pathname === '/admin/issue-document' ? 'font-bold' : ''}`} to="/admin/issue-document">ออกเอกสาร</Link>
+                        <Link className={`mr-3 ${location.pathname === '/admin/issue-document' ? 'font-bold' : ''}`} to="/admin/issue-document">จัดส่งเอกสาร</Link>
                         <Link className={`mr-3 ${location.pathname === '/admin/settings' ? 'font-bold' : ''}`} to="/admin/settings">ตั้งค่าระบบ</Link>
                     </>
                 )}

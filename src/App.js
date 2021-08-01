@@ -12,7 +12,7 @@ import TecherSetting from './pages/Techer/TecherSetting';
 
 function App() {
   return (
-    <BrowserRouter basename={"/petition-system"}>
+    <BrowserRouter basename={'/petition-system'} >
       <div className="bg-gray-100 min-h-screen overflow-x-hidden py-2">
         <div className="container mx-auto">
           <header className="flex justify-center bg-yellow-300">
@@ -68,7 +68,7 @@ const GuestRoute = ({ children, ...rest }) => {
         if (isAuth && admin && !student && !techer) {
           return <Redirect
             to={{
-              pathname: '/admin',
+              pathname: '/admin/manage-request',
               state: { from: location },
             }}
           />

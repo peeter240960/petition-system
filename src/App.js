@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Admin from './pages/Admin';
 import Document from './pages/Admin/Document';
-import Setting from './pages/Admin/Setting';
+import AdminSetting from './pages/Admin/AdminSetting';
 import { useSelector } from 'react-redux';
 import Authenticate from './pages/Authenticate'
 import Techer from './pages/Techer';
@@ -9,6 +9,7 @@ import Student from './pages/Student';
 import NavigationBar from './components/shared/Navigation/NavigationBar'
 import FormStudentRequest from './pages/Student/FormStudentRequest';
 import TecherSetting from './pages/Techer/TecherSetting';
+import AdminFormRequest from './pages/Admin/AdminFormRequest';
 
 function App() {
   return (
@@ -27,11 +28,14 @@ function App() {
               <AdminRoute path="/admin/manage-request">
                 <Admin />
               </AdminRoute>
+              <AdminRoute path="/admin/create-request">
+                <AdminFormRequest />
+              </AdminRoute>
               <AdminRoute path="/admin/issue-document">
                 <Document />
               </AdminRoute>
               <AdminRoute path="/admin/settings">
-                <Setting />
+                <AdminSetting />
               </AdminRoute>
 
               <StudentRoute path="/student/track">

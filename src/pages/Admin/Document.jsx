@@ -38,13 +38,14 @@ function Document() {
 }
 function TableAdminRequest() {
     const [isOpen, setIsOpen] = useState(false)
+    const [isStatusRequest, setIsStatusRequest] = useState("pending")
     return (
         <>
             <div className="overflow-x-scroll">
                 <table className="w-full text-left border-collapse border" style={{ minWidth: "1200px" }}>
                     <thead className="border-bottom py-10">
                         <tr>
-                            <th className="border p-2" width="250px">คำร้อง</th>
+                            <th className="border p-2" width="300px">คำร้อง</th>
                             <th className="border p-2" width="180px">รหัสนักศึกษา</th>
                             <th className="border p-2" width="180px">ชื่อนักศึกษา</th>
                             <th className="border p-2" width="180px">กำลังดำเนินการ</th>
@@ -64,7 +65,10 @@ function TableAdminRequest() {
                                 {new Date().toLocaleString()}
                             </td>
                             <td className="border p-2 text-center">
-                                <button className="px-3 py-1 bg-yellow-300 rounded-full text-white text-xs font-bold" onClick={() => setIsOpen(true)}>ดำเนินการ</button>
+                                <button className="px-3 py-1 bg-yellow-300 rounded-full text-white text-xs font-bold" onClick={() => {
+                                    setIsOpen(true)
+                                    setIsStatusRequest("pending")
+                                }}>ดำเนินการ</button>
                             </td>
                         </tr>
                         <tr className="hover:bg-gray-100">
@@ -78,44 +82,112 @@ function TableAdminRequest() {
                                 {new Date().toLocaleString()}
                             </td>
                             <td className="border p-2 text-center">
-                                <button className="px-3 py-1 bg-green-500 rounded-full text-white text-xs font-bold">พร้อมจัดส่ง</button>
+                                <button className="px-3 py-1 bg-green-500 rounded-full text-white text-xs font-bold" onClick={() => {
+                                    setIsOpen(true)
+                                    setIsStatusRequest("success")
+                                }}>พร้อมจัดส่ง</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <ModalGlobal showModal={isOpen} setShowModal={setIsOpen} >
-                <Stepper activeStep={2}>
-                    <Step label="อาจารย์ที่ปรึกษา" />
-                    <Step label="คณะกรรมการบริหารหลักสูตร" />
-                    <Step label="คณะบดี คณะศิลปศาสตร์และวิทยาศาสตร์" />
-                </Stepper>
-                <table className="text-left w-full">
-                    <tbody>
-                        <tr>
-                            <th className="py-1 w-32">วันที่ยื่นคำร้อง</th>
-                            <td>{new Date().toLocaleString()}</td>
-                        </tr>
-                        <tr>
-                            <th className="py-1 w-32">หมายเลขคำร้อง</th>
-                            <td>123</td>
-                        </tr>
-                        <tr>
-                            <th className="py-1 w-32">คำร้อง</th>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
-                        </tr>
-                        <tr>
-                            <th className="py-1 w-32">รายละเอียด</th>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, odit!</td>
-                        </tr>
-                        <tr>
-                            <th className="py-1 w-32">นักศึกษา</th>
-                            <td>นายปรัชญา มณีโชติ</td>
-                        </tr>
-                    </tbody>
-                </table>
+                {
+                    isStatusRequest === "pending" ? <RequestPendingContent />
+                        : <RequestSuccessContent />
+                }
             </ModalGlobal>
         </>
     )
+}
+
+function RequestPendingContent() {
+    return (
+        <>
+            <Stepper activeStep={1}>
+                <Step label="อาจารย์ที่ปรึกษา" />
+                <Step label="คณะกรรมการบริหารหลักสูตร" />
+                <Step label="คณะบดี คณะศิลปศาสตร์และวิทยาศาสตร์" />
+            </Stepper>
+            <table className="text-left w-full">
+                <tbody>
+                    <tr>
+                        <th className="py-1 w-32">วันที่ยื่นคำร้อง</th>
+                        <td>{new Date().toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">หมายเลขคำร้อง</th>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">คำร้อง</th>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">รายละเอียด</th>
+                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, odit!</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">นักศึกษา</th>
+                        <td>นายปรัชญา มณีโชติ</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </>
+    )
+
+}
+
+function RequestSuccessContent({ closeModal }) {
+    return (
+        <>
+            <table className="text-left w-full">
+                <tbody>
+                    <tr>
+                        <th className="py-1 w-32">วันที่ยื่นคำร้อง</th>
+                        <td>{new Date().toLocaleString()}</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">หมายเลขคำร้อง</th>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">คำร้อง</th>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">รายละเอียด</th>
+                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, odit!</td>
+                    </tr>
+                    <tr>
+                        <th className="py-1 w-32">นักศึกษา</th>
+                        <td>นายปรัชญา มณีโชติ</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2" className="pt-3">
+                            <div className="grid">
+                                <b>อัพโหลดเอกสาร</b>
+                                <input type="file" name="homeDelivery" className="bg-gray-100 p-2" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2" className="pt-2">
+                            <div className="grid">
+                                <b>แลขแทร็ก</b>
+                                <input type="text" name="homeDelivery" className="bg-gray-100 p-2" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div className="flex justify-end pt-2">
+                <button className="rounded px-2 py-1 bg-green-500 text-white font-bold">ยืนยัน</button>
+            </div>
+
+        </>
+    )
+
 }
 export default Document

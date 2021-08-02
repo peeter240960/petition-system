@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { data } from '../Student'
 
 function Admin() {
@@ -24,7 +25,7 @@ function Admin() {
                             onChange={e => setSearch(e.target.value)}
                         />
                         <div className="mx-1"></div>
-                        <button className="px-2 py-1 rounded bg-yellow-600 text-white">เพิ่ม</button>
+                        <Link to="/admin/create-request" className="px-2 py-1 rounded bg-yellow-600 text-white">เพิ่ม</Link>
                     </div>
                 </header>
 
@@ -44,7 +45,7 @@ function TableAdminRequest({ data }) {
                     <tr>
                         <th className="border p-2" width="200px">#</th>
                         <th className="border p-2" >คำร้อง</th>
-                        <th className="border p-2" width="180px">วันที่ออกคำร้อง</th>
+                        <th className="border p-2" width="200px">วันที่ออกคำร้อง</th>
                         <th className="border p-2" width="100">จัดการ</th>
                     </tr>
                 </thead>

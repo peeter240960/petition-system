@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ModalGlobal({ children, showModal, setShowModal }) {
+function ModalGlobal({ children, showModal, setShowModal, title = "รายละเอียด" }) {
     if (showModal) {
         return (
             <>
@@ -13,7 +13,7 @@ function ModalGlobal({ children, showModal, setShowModal }) {
                             {/*header*/}
                             <div className="flex items-center justify-between p-5 pb-1 rounded-t">
                                 <h3 className="text-xl font-semibold">
-                                    รายละเอียด
+                                    {title}
                                 </h3>
                                 <button
                                     className="p-1 text-black"

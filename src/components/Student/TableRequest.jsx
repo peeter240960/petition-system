@@ -4,26 +4,30 @@ import { Link } from 'react-router-dom';
 
 function TableRequest({ data }) {
     return (
-        <table className="w-full text-left border-collapse border">
-            <thead className="border-bottom py-10">
-                <tr>
-                    <th className="border p-2" width="200px">หมายเลขติดตาม</th>
-                    <th className="border p-2" >คำร้อง</th>
-                    <th className="border p-2 text-center" width="150px">สถานะ</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map(data =>
-                    <tr key={data.id} className="hover:bg-gray-100">
-                        <td className="border p-2" >{data.id}</td>
-                        <td className="border p-2" >{data.name} </td>
-                        <td className="border p-2 text-center" >
-                            <SwitchCaseStatus status={data.status} />
-                        </td>
-                    </tr>)}
+        <div className="overflow-x-scroll">
+            <table className="w-full text-left border-collapse border" style={{
+                minWidth: "600px"
+            }}>
+                <thead className="border-bottom py-10">
+                    <tr>
+                        <th className="border p-2" width="150px">หมายเลขติดตาม</th>
+                        <th className="border p-2" >คำร้อง</th>
+                        <th className="border p-2 text-center" width="150px">สถานะ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map(data =>
+                        <tr key={data.id} className="hover:bg-gray-100">
+                            <td className="border p-2" >{data.id}</td>
+                            <td className="border p-2" >{data.name} </td>
+                            <td className="border p-2 text-center" >
+                                <SwitchCaseStatus status={data.status} />
+                            </td>
+                        </tr>)}
 
-            </tbody>
-        </table>
+                </tbody>
+            </table >
+        </div>
     )
 }
 

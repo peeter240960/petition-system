@@ -40,49 +40,50 @@ function TableAdminRequest() {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <>
-            <table className="w-full text-left border-collapse border">
-                <thead className="border-bottom py-10">
-                    <tr>
-                        <th className="border p-2" >คำร้อง</th>
-                        <th className="border p-2" width="180px">รหัสนักศึกษา</th>
-                        <th className="border p-2" width="180px">ชื่อนักศึกษา</th>
-                        <th className="border p-2" width="180px">กำลังดำเนินการ</th>
-                        <th className="border p-2" width="180px">วันที่ยื่นคำร้อง</th>
-                        <th className="border p-2 text-center" width="150">จัดการ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="hover:bg-gray-100">
-                        <td className="border p-2" >
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, eos!
-                        </td>
-                        <td className="border p-2">1232</td>
-                        <td className="border p-2"> นายปรัชญา <br /> มณีโชติ</td>
-                        <td className="border p-2"> ศดร.ปีเตอร์</td>
-                        <td className="border p-2" >
-                            {new Date().toLocaleString()}
-                        </td>
-                        <td className="border p-2 text-center">
-                            <button className="px-3 py-1 bg-yellow-300 rounded-full text-white text-sm" onClick={() => setIsOpen(true)}>กำลังดำเนินการ</button>
-                        </td>
-                    </tr>
-                    <tr className="hover:bg-gray-100">
-                        <td className="border p-2" >
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, eos!
-                        </td>
-                        <td className="border p-2">1232</td>
-                        <td className="border p-2"> นายปรัชญา <br /> มณีโชติ</td>
-                        <td className="border p-2"> ศดร.ปีเตอร์</td>
-                        <td className="border p-2" >
-                            {new Date().toLocaleString()}
-                        </td>
-                        <td className="border p-2 text-center">
-                            <button className="px-3 py-1 bg-green-500 rounded-full text-white text-sm">พร้อมจัดส่ง</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div className="overflow-x-scroll">
+                <table className="w-full text-left border-collapse border" style={{ minWidth: "1000px" }}>
+                    <thead className="border-bottom py-10">
+                        <tr>
+                            <th className="border p-2" width="250px">คำร้อง</th>
+                            <th className="border p-2" width="180px">รหัสนักศึกษา</th>
+                            <th className="border p-2" width="180px">ชื่อนักศึกษา</th>
+                            <th className="border p-2" width="180px">กำลังดำเนินการ</th>
+                            <th className="border p-2" width="180px">วันที่ยื่นคำร้อง</th>
+                            <th className="border p-2 text-center" width="150">จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className="hover:bg-gray-100">
+                            <td className="border p-2" >
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, eos!
+                            </td>
+                            <td className="border p-2">1232</td>
+                            <td className="border p-2"> นายปรัชญา <br /> มณีโชติ</td>
+                            <td className="border p-2"> ศดร.ปีเตอร์</td>
+                            <td className="border p-2" >
+                                {new Date().toLocaleString()}
+                            </td>
+                            <td className="border p-2 text-center">
+                                <button className="px-3 py-1 bg-yellow-300 rounded-full text-white text-xs font-bold" onClick={() => setIsOpen(true)}>ดำเนินการ</button>
+                            </td>
+                        </tr>
+                        <tr className="hover:bg-gray-100">
+                            <td className="border p-2" >
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, eos!
+                            </td>
+                            <td className="border p-2">1232</td>
+                            <td className="border p-2"> นายปรัชญา <br /> มณีโชติ</td>
+                            <td className="border p-2"> - </td>
+                            <td className="border p-2" >
+                                {new Date().toLocaleString()}
+                            </td>
+                            <td className="border p-2 text-center">
+                                <button className="px-3 py-1 bg-green-500 rounded-full text-white text-xs font-bold">พร้อมจัดส่ง</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <ModalGlobal showModal={isOpen} setShowModal={setIsOpen} >
                 <Stepper activeStep={2}>
                     <Step label="อาจารย์ที่ปรึกษา" />

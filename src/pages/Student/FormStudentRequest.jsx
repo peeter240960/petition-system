@@ -147,34 +147,36 @@ function FormStudentRequest() {
 
 function TablePreRequest() {
     return (
-        <table className="w-full text-left border-collapse border">
-            <thead className="border-bottom py-10">
-                <tr>
-                    <th className="border p-2" width="100px">#</th>
-                    <th className="border p-2" width="200">คำร้อง</th>
-                    <th className="border p-2 text-center" width="150px">จำนวน</th>
-                    <th className="border p-2 text-center" width="150px">ค่าธรรมเนียม</th>
-                    <th className="border p-2 text-center" width="70px">จัดการ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr className="hover:bg-gray-100">
-                    <td className="border p-2" >top</td>
-                    <td className="border p-2" >top</td>
-                    <td className="border p-2" >top</td>
-                    <td className="border p-2" >top</td>
-                    <td className="border p-2 text-center" >
-                        <button className="bg-red-600 text-white px-2 py-1 rounded">ลบ</button>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th className="border p-2 text-right" colSpan="3">ค่าธรรมเนียมทั้งหมด</th>
-                    <th className="border p-2 text-center" colSpan="2">10</th>
-                </tr>
-            </tfoot>
-        </table>
+        <div className="overflow-x-scroll">
+            <table className="w-full text-left border-collapse border" style={{ minWidth: "800px" }}>
+                <thead className="border-bottom py-10">
+                    <tr>
+                        <th className="border p-2" width="100px">#</th>
+                        <th className="border p-2" width="200">คำร้อง</th>
+                        <th className="border p-2 text-center" width="150px">จำนวน</th>
+                        <th className="border p-2 text-center" width="150px">ค่าธรรมเนียม</th>
+                        <th className="border p-2 text-center" width="70px">จัดการ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr className="hover:bg-gray-100">
+                        <td className="border p-2" >top</td>
+                        <td className="border p-2" >top</td>
+                        <td className="border p-2" >top</td>
+                        <td className="border p-2" >top</td>
+                        <td className="border p-2 text-center" >
+                            <button className="bg-red-600 text-white px-2 py-1 rounded">ลบ</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th className="border p-2 text-right" colSpan="3">ค่าธรรมเนียมทั้งหมด</th>
+                        <th className="border p-2 text-center" colSpan="2">10</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     )
 }
 

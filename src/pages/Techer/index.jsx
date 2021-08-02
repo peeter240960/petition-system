@@ -51,36 +51,37 @@ function TablePreProcess({ data }) {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <>
-            <table className="w-full text-left border-collapse border">
-                <thead className="border-bottom py-10">
-                    <tr>
-                        <th className="border p-2" >คำร้อง</th>
-                        <th className="border p-2" width="150">รหัสนักศึกษา</th>
-                        <th className="border p-2" >ชื่อนักศึกษา</th>
-                        <th className="border p-2 text-center" width="150px">จัดการ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map(data =>
-                        <tr key={data.id} className="hover:bg-gray-100">
-                            <td className="border p-2" >{data.name} </td>
-                            <td className="border p-2" >{data.id}</td>
-                            <td className="border p-2" >{data.name} </td>
-                            <td className="border p-2 text-center" >
-                                <button className="bg-yellow-600 text-white py-1 px-2 rounded" onClick={() => setIsOpen(true)}>
-                                    ตรวจสอบ
-                                </button>
-                            </td>
-                        </tr>)}
-                </tbody>
-            </table>
+            <div className="overflow-x-scroll">
+
+                <table className="w-full text-left border-collapse border" style={{ minWidth: "900px" }}>
+                    <thead className="border-bottom py-10">
+                        <tr>
+                            <th className="border p-2" >คำร้อง</th>
+                            <th className="border p-2" width="150">รหัสนักศึกษา</th>
+                            <th className="border p-2" >ชื่อนักศึกษา</th>
+                            <th className="border p-2 text-center" width="150px">จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map(data =>
+                            <tr key={data.id} className="hover:bg-gray-100">
+                                <td className="border p-2" >{data.name} </td>
+                                <td className="border p-2" >{data.id}</td>
+                                <td className="border p-2" >{data.name} </td>
+                                <td className="border p-2 text-center" >
+                                    <button className="bg-yellow-600 text-white py-1 px-2 rounded" onClick={() => setIsOpen(true)}>
+                                        ตรวจสอบ
+                                    </button>
+                                </td>
+                            </tr>)}
+                    </tbody>
+                </table>
+            </div>
             <ModalGlobal showModal={isOpen} setShowModal={setIsOpen} >
                 <Stepper activeStep={2}>
                     <Step label="อาจารย์ที่ปรึกษา" />
                     <Step label="คณะกรรมการบริหารหลักสูตร" />
                     <Step label="คณะบดี คณะศิลปศาสตร์และวิทยาศาสตร์" />
-                    <Step label="อาจารย์ที่ปรึกษา" />
-                    <Step label="คณะกรรมการบริหารหลักสูตร" />
                 </Stepper>
                 <table className="text-left w-full">
                     <tbody>

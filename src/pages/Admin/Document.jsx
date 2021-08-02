@@ -41,7 +41,7 @@ function TableAdminRequest() {
     return (
         <>
             <div className="overflow-x-scroll">
-                <table className="w-full text-left border-collapse border" style={{ minWidth: "1000px" }}>
+                <table className="w-full text-left border-collapse border" style={{ minWidth: "1200px" }}>
                     <thead className="border-bottom py-10">
                         <tr>
                             <th className="border p-2" width="250px">คำร้อง</th>
@@ -89,8 +89,6 @@ function TableAdminRequest() {
                     <Step label="อาจารย์ที่ปรึกษา" />
                     <Step label="คณะกรรมการบริหารหลักสูตร" />
                     <Step label="คณะบดี คณะศิลปศาสตร์และวิทยาศาสตร์" />
-                    <Step label="อาจารย์ที่ปรึกษา" />
-                    <Step label="คณะกรรมการบริหารหลักสูตร" />
                 </Stepper>
                 <table className="text-left w-full">
                     <tbody>

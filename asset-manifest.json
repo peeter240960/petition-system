@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/petition-system/static/css/main.e664372d.chunk.css",
-    "main.js": "/petition-system/static/js/main.8a201e93.chunk.js",
-    "main.js.map": "/petition-system/static/js/main.8a201e93.chunk.js.map",
+    "main.css": "/petition-system/static/css/main.d83ce7aa.chunk.css",
+    "main.js": "/petition-system/static/js/main.d662902a.chunk.js",
+    "main.js.map": "/petition-system/static/js/main.d662902a.chunk.js.map",
     "runtime-main.js": "/petition-system/static/js/runtime-main.a96163f8.js",
     "runtime-main.js.map": "/petition-system/static/js/runtime-main.a96163f8.js.map",
     "static/js/2.0c1a43b2.chunk.js": "/petition-system/static/js/2.0c1a43b2.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.40963622.chunk.js": "/petition-system/static/js/3.40963622.chunk.js",
     "static/js/3.40963622.chunk.js.map": "/petition-system/static/js/3.40963622.chunk.js.map",
     "index.html": "/petition-system/index.html",
-    "static/css/main.e664372d.chunk.css.map": "/petition-system/static/css/main.e664372d.chunk.css.map",
+    "static/css/main.d83ce7aa.chunk.css.map": "/petition-system/static/css/main.d83ce7aa.chunk.css.map",
     "static/js/2.0c1a43b2.chunk.js.LICENSE.txt": "/petition-system/static/js/2.0c1a43b2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a96163f8.js",
     "static/js/2.0c1a43b2.chunk.js",
-    "static/css/main.e664372d.chunk.css",
-    "static/js/main.8a201e93.chunk.js"
+    "static/css/main.d83ce7aa.chunk.css",
+    "static/js/main.d662902a.chunk.js"
   ]
 }
